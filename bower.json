@@ -1,7 +1,7 @@
 {
   "name": "emojionearea",
-  "version": "2.1.2",
-  "homepage": "https://github.com/mervick/emojionearea",
+  "version": "2.1.5",
+  "homepage": "https://github.com/paulodrade/emojionearea",
   "authors": [
     "Andrey Izman <izmanw@gmail.com>"
   ],
@@ -10,6 +10,10 @@
     "emoji",
     "emojione",
     "area"
+  ],
+  "main": [
+    "js/emojionearea.js",
+    "css/emojionearea.css"
   ],
   "license": "MIT",
   "ignore": [
