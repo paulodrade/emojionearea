@@ -1,9 +1,9 @@
 /*!
- * EmojioneArea v2.1.4
+ * EmojioneArea v2.1.5
  * https://github.com/mervick/emojionearea
  * Copyright Andrey Izman and other contributors
  * Released under the MIT license
- * Date: 2016-05-24T20:06Z
+ * Date: 2017-04-26T14:42Z
  */
 (function(document, window, $) {
     'use strict';
@@ -479,29 +479,29 @@
         } else {
             els.push("editor");
         }
-        
+
         for (var el = els, i=0; i<3; i++) {
             app = app.replace(new RegExp('<' + el[i] + '/?>' ,'i'), '<div class="emojionearea-' + el[i] + '"></div>');
         }
 
         app = $('<div/>', {"class" : source.attr("class"), role: "application"}).addClass("emojionearea").html(app);
-        
+
         if (self.standalone) {
             button = self.button = app.find(".emojionearea-button");
             app.addClass("has-button");
         } else {
             editor = self.editor = app.find(".emojionearea-editor")
                 .attr({
-                    contenteditable: true,
+                    contenteditable: (self.standalone) ? false : true,
                     placeholder: options["placeholder"] || source.data("placeholder") || source.attr("placeholder") || "",
                     tabindex: 0
                 });
-                
+
             for (var attr = ["dir", "spellcheck", "autocomplete", "autocorrect", "autocapitalize"], j=0; j<5; j++) {
                 editor.attr(attr[j], options[attr[j]]);
             }
         }
-        
+
         filters = app.find(".emojionearea-filters");
         if (options.autoHideFilters || self.standalone) {
             hide(filters);
@@ -691,7 +691,7 @@
             .on("@emojibtn.click", function(element) {
                 var img = shortnameTo(element.children().data("name"),
                         '<img alt="{alt}" class="emojione' + (self.sprite ? '-{uni}" src="'+blankImg+'">' : '" src="{img}">'));
-                
+
                 if (self.standalone) {
                     self.button.html(img);
                     self.button.removeClass("placeholder");
@@ -829,6 +829,29 @@
         var el = (this.standalone) ? "button" : "editor";
         return textFromHtml(this[el].html(), this);
     }
+
+  EmojioneArea.prototype.enable = function () {
+      var self = this;
+      var editor = self[(self.standalone) ? "button" : "editor"];
+      emojioneReady(function () {
+          editor.prop('contenteditable', true);
+          editor.parent().css('opacity', 1);
+          editor.parent().removeClass('emojionearea-disable');
+          trigger(self, 'enable', [editor]);
+      });
+      return self;
+  }
+
+  EmojioneArea.prototype.disable = function () {
+      var self = this;
+      var editor = self[(self.standalone) ? "button" : "editor"];
+      emojioneReady(function () {
+          editor.prop('contenteditable', false);
+          editor.parent().addClass('emojionearea-disable');
+          trigger(self, 'disable', [editor]);
+      });
+      return self;
+  }
 
     $.fn.emojioneArea = function(options) {
         return this.each(function() {

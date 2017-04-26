@@ -55,29 +55,29 @@ function($, blankImg, setInterval, clearInterval, trigger, attach, shortnameTo, 
         } else {
             els.push("editor");
         }
-        
+
         for (var el = els, i=0; i<3; i++) {
             app = app.replace(new RegExp('<' + el[i] + '/?>' ,'i'), '<div class="emojionearea-' + el[i] + '"></div>');
         }
 
         app = $('<div/>', {"class" : source.attr("class"), role: "application"}).addClass("emojionearea").html(app);
-        
+
         if (self.standalone) {
             button = self.button = app.find(".emojionearea-button");
             app.addClass("has-button");
         } else {
             editor = self.editor = app.find(".emojionearea-editor")
                 .attr({
-                    contenteditable: true,
+                    contenteditable: (self.standalone) ? false : true,
                     placeholder: options["placeholder"] || source.data("placeholder") || source.attr("placeholder") || "",
                     tabindex: 0
                 });
-                
+
             for (var attr = ["dir", "spellcheck", "autocomplete", "autocorrect", "autocapitalize"], j=0; j<5; j++) {
                 editor.attr(attr[j], options[attr[j]]);
             }
         }
-        
+
         filters = app.find(".emojionearea-filters");
         if (options.autoHideFilters || self.standalone) {
             hide(filters);
@@ -267,7 +267,7 @@ function($, blankImg, setInterval, clearInterval, trigger, attach, shortnameTo, 
             .on("@emojibtn.click", function(element) {
                 var img = shortnameTo(element.children().data("name"),
                         '<img alt="{alt}" class="emojione' + (self.sprite ? '-{uni}" src="'+blankImg+'">' : '" src="{img}">'));
-                
+
                 if (self.standalone) {
                     self.button.html(img);
                     self.button.removeClass("placeholder");

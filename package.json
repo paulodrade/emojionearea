@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mervick/emojionearea.git"
+    "url": "git+https://github.com/paulodrade/emojionearea.git"
   },
   "keywords": [
     "emoji",
@@ -20,9 +20,9 @@
   "author": "Andrey Izman <izmanw@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mervick/emojionearea/issues"
+    "url": "https://github.com/paulodrade/emojionearea/issues"
   },
-  "homepage": "https://github.com/mervick/emojionearea#readme",
+  "homepage": "https://github.com/paulodrade/emojionearea#readme",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
