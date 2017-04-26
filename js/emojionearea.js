@@ -1,9 +1,9 @@
 /*!
- * EmojioneArea v2.1.5
+ * EmojioneArea v2.1.6
  * https://github.com/mervick/emojionearea
  * Copyright Andrey Izman and other contributors
  * Released under the MIT license
- * Date: 2017-04-26T14:42Z
+ * Date: 2017-04-26T17:48Z
  */
 (function(document, window, $) {
     'use strict';
