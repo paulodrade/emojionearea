@@ -17,11 +17,11 @@ See a [Demo page](http://mervick.github.io/emojionearea/).
 The preferred way to install is via [Bower](http://bower.io/), [npm](https://www.npmjs.com/) or [Composer](https://getcomposer.org/).
 
 ```bash
-bower install emojionearea#^2.1.5
+bower install emojionearea#^2.1.6
 # or
-npm install emojionearea@^2.1.5
+npm install emojionearea@^2.1.6
 # or
-composer require mervick/emojionearea ^2.1.5
+composer require mervick/emojionearea ^2.1.6
 ```
 
 ## Usage
@@ -117,6 +117,12 @@ Default options
   .getText();
   //   Get text
 
+  .enable();
+  //   activete the emojioneArea
+
+  .disable();
+  //   deactivate the emojioneArea
+
   // Usage methods, example:
   var el = $("selector").emojioneArea();
   el[0].emojioneArea.on("emojibtn.click", function(btn, event) {
@@ -199,6 +205,20 @@ $("selector").emojioneArea({
      */
     change: function (editor, event) {
       console.log('event:change');
+    },
+    /**
+     * @param {jQuery} editor EmojioneArea input
+     * @param {Event} event jQuery Event object
+     */
+    enable: function (editor, event) {
+      console.log('event:enable');
+    },
+    /**
+     * @param {jQuery} editor EmojioneArea input
+     * @param {Event} event jQuery Event object
+     */
+    disable: function (editor, event) {
+      console.log('event:disable');
     },
     /**
      * @param {jQuery} filter EmojioneArea filter
