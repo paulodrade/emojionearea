@@ -3,7 +3,7 @@
  * https://github.com/mervick/emojionearea
  * Copyright Andrey Izman and other contributors
  * Released under the MIT license
- * Date: 2017-01-20T14:56Z
+ * Date: 2017-04-27T19:48Z
  */
 (function(document, window, $) {
     'use strict';
@@ -1073,9 +1073,9 @@
 
         emojioneReady(function() {
             if (options.useInternalCDN) {
-                emojione.imagePathPNG = cdn.base + "/png/";
-                emojione.imagePathSVG = cdn.base + "/svg/";
-                emojione.imagePathSVGSprites = cdn.base + "/sprites/emojione.sprites.svg";
+                emojione.imagePathPNG = (options.imagePathPNG || cdn.base + "/png/") + "/";
+                emojione.imagePathSVG = (options.imagePathSVG || cdn.base + "/svg/") + "/";
+                emojione.imagePathSVGSprites = (options.imagePathSVGSprites || cdn.base + "/sprites") + "/emojione.sprites.svg";
                 emojione.imageType = options.imageType;
             }
 

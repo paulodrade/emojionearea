@@ -6,3 +6,4 @@ composer.lock
 test
 compress.sh
 node_modules
+bower_components

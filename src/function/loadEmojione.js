@@ -69,9 +69,9 @@ function(emojione, uniRegexp, emojioneVersion, readyCallbacks, emojioneSupportMo
 
         emojioneReady(function() {
             if (options.useInternalCDN) {
-                emojione.imagePathPNG = cdn.base + "/png/";
-                emojione.imagePathSVG = cdn.base + "/svg/";
-                emojione.imagePathSVGSprites = cdn.base + "/sprites/emojione.sprites.svg";
+                emojione.imagePathPNG = (options.imagePathPNG || cdn.base + "/png/") + "/";
+                emojione.imagePathSVG = (options.imagePathSVG || cdn.base + "/svg/") + "/";
+                emojione.imagePathSVGSprites = (options.imagePathSVGSprites || cdn.base + "/sprites") + "/emojione.sprites.svg";
                 emojione.imageType = options.imageType;
             }
 
