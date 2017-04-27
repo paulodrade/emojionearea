@@ -1,7 +1,7 @@
 # EmojiOne Area
 
-EmojiOne Area is a small jQuery plugin that allows you to transform any html element into simple WYSIWYG editor with 
-ability to use Emojione icons. 
+EmojiOne Area is a small jQuery plugin that allows you to transform any html element into simple WYSIWYG editor with
+ability to use Emojione icons.
 The end result is a secure text/plain in which the image icons will be replaced with their Unicode analogues.
 
 ### Version 2.1
@@ -25,21 +25,21 @@ The preferred way to install is via [Bower](http://bower.io/), [npm](https://www
 ### Install v2.1
 
 ```bash
-bower install emojionearea#^2.1.0 
+bower install emojionearea#^2.1.6
 # or
-npm install emojionearea@^2.1.0
+npm install emojionearea@^2.1.6
 # or
-composer require mervick/emojionearea ^2.1.0
+composer require mervick/emojionearea ^2.1.6
 ```
 
 ### Install v3.0
 
 ```bash
-bower install emojionearea#^3.0.0 
+bower install emojionearea#^3.1.7
 # or
-npm install emojionearea@^3.0.0
+npm install emojionearea@^3.1.7
 # or
-composer require mervick/emojionearea ^3.0.0
+composer require mervick/emojionearea ^3.1.7
 ```
 
 ## Usage
